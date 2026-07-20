@@ -1,0 +1,6 @@
+{
+  "name": "ShopZone",
+  "description": "An interactive, fully responsive, and modern e-commerce storefront with a sleek UI, dynamic category filtering, a product detail modal, cart slide-over drawer, wishlist support, and a checkout wizard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
