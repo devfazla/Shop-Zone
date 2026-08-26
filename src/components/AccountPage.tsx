@@ -7,16 +7,16 @@ export default function AccountPage() {
   const [activeTab, setActiveTab] = useState<"profile" | "orders" | "addresses" | "security">("profile");
 
   // User Profile state
-  const [name, setName] = useState("fazlar480");
-  const [email, setEmail] = useState("fazlar480@gmail.com");
-  const [phone, setPhone] = useState("+1 (555) 234-5678");
+  const [name, setName] = useState("devfazla");
+  const [email, setEmail] = useState("hello@devfazla.com");
+  const [phone, setPhone] = useState("+88 01845 855131");
   const [isSaved, setIsSaved] = useState(false);
 
   // Address State
-  const [street, setStreet] = useState("100 Infinite Loop, Suite 400");
-  const [city, setCity] = useState("Cupertino");
-  const [zip, setZip] = useState("95014");
-  const [state, setState] = useState("California");
+  const [street, setStreet] = useState("Shuloghar, Sunamganj");
+  const [city, setCity] = useState("Sylhet");
+  const [zip, setZip] = useState("3000");
+  const [state, setState] = useState("G");
   const [isAddressSaved, setIsAddressSaved] = useState(false);
 
   // Password / Security state

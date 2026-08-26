@@ -30,7 +30,7 @@ export default function Footer({ setActiveCategory, scrollToProducts, onNavigate
   };
 
   return (
-    <footer id="footer-section" className="bg-navy-dark text-slate-400 pt-16 md:pt-20 pb-8 relative">
+    <footer id="footer-section" className="bg-navy-dark text-slate-400 pt-16 md:pt-20 pb-20 md:pb-8 relative">
       
       {/* Upper Footer: 4 Grid Columns */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-800 pb-12 mb-10">

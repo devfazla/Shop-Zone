@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { ArrowLeft, Check, Heart, ShoppingCart, Minus, Plus, Star, ShieldCheck, Truck, RotateCcw, ArrowRight, Share2 } from "lucide-react";
+import { ArrowLeft, Check, Minus, Plus, Star, ShieldCheck, Truck, RotateCcw, ArrowRight, Share2 } from "lucide-react";
 import { motion } from "motion/react";
 import { Product, ColorOption } from "../types";
 import { PRODUCTS } from "../data";
+import AnimatedWishlistButton from "./AnimatedWishlistButton";
+import AnimatedAddToCartButton from "./AnimatedAddToCartButton";
 
 interface ProductDetailsProps {
   product: Product;
@@ -172,17 +174,20 @@ export default function ProductDetails({
                   </div>
 
                   {/* Wishlist toggle */}
-                  <button
-                    onClick={() => onToggleWishlist(product)}
-                    className={`flex items-center space-x-1.5 px-4 py-2 rounded-xl text-xs font-bold shadow-xs transition-all border cursor-pointer ${
+                  <AnimatedWishlistButton
+                    id={`details-wishlist-${product.id}`}
+                    isFavorited={isFavorited}
+                    onToggle={() => onToggleWishlist(product)}
+                    showLabel={true}
+                    labelActive="Saved"
+                    labelInactive="Save to Wishlist"
+                    size="sm"
+                    className={`px-4 py-2 rounded-xl text-xs font-bold shadow-xs transition-all border ${
                       isFavorited
                         ? "bg-rose-50 border-rose-100 text-rose-500"
                         : "bg-white border-slate-100 hover:border-slate-200 text-slate-500 hover:text-brand-purple"
                     }`}
-                  >
-                    <Heart className={`h-4 w-4 ${isFavorited ? "fill-current" : ""}`} />
-                    <span>{isFavorited ? "Saved" : "Save to Wishlist"}</span>
-                  </button>
+                  />
                 </div>
               </div>
 
@@ -362,14 +367,17 @@ export default function ProductDetails({
                   </button>
                 </div>
 
-                {/* Add To Cart */}
-                <button
-                  onClick={handleAddSubmit}
-                  className="w-full sm:flex-grow bg-brand-purple hover:bg-brand-purple-dark text-white font-black text-xs sm:text-sm tracking-widest h-12 rounded-xl shadow-lg shadow-brand-purple/10 flex items-center justify-center space-x-3 cursor-pointer transition-all"
-                >
-                  <ShoppingCart className="h-4.5 w-4.5" />
-                  <span>ADD TO SHOPPING CART</span>
-                </button>
+                {/* Add To Cart Button */}
+                <div className="w-full sm:flex-grow">
+                  <AnimatedAddToCartButton
+                    id={`details-add-${product.id}`}
+                    variant="full"
+                    label="ADD TO SHOPPING CART"
+                    successLabel="ADDED TO CART!"
+                    onAdd={handleAddSubmit}
+                    className="h-12"
+                  />
+                </div>
               </div>
 
               {/* Quick confidence guarantees */}

@@ -3,7 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>ShopZone - Modern Online Store</title>
+    <script>
+      (function() {
+        try {
+          const originalFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          let currentFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get() {
+              return currentFetch;
+            },
+            set(newFetch) {
+              currentFetch = newFetch;
+            },
+            configurable: true,
+            enumerable: true,
+          });
+        } catch (e) {
+          // Fallback if property definition is restricted
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

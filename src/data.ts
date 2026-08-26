@@ -217,7 +217,7 @@ export const PRODUCTS: Product[] = [
     image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600&auto=format&fit=crop",
     images: [
       "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1608248597481-496100c8c836?q=80&w=600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&auto=format&fit=crop"
     ],
     rating: 4.8,
     reviewCount: 156,
@@ -367,9 +367,10 @@ export const PRODUCTS: Product[] = [
     name: "Full-Grain Italian Leather Wallet",
     price: 55,
     category: "accessories",
-    image: "https://images.unsplash.com/photo-1627123590736-44d385f18589?q=80&w=600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1627123590736-44d385f18589?q=80&w=600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?q=80&w=600&auto=format&fit=crop"
     ],
     rating: 4.7,
     reviewCount: 112,

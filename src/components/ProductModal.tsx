@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { X, Star, ShoppingCart, Minus, Plus, Heart, Check } from "lucide-react";
+import { X, Star, Minus, Plus, Check } from "lucide-react";
 import { Product, ColorOption } from "../types";
 import { MOCK_REVIEWS } from "../data";
 import { motion, AnimatePresence } from "motion/react";
+import AnimatedWishlistButton from "./AnimatedWishlistButton";
+import AnimatedAddToCartButton from "./AnimatedAddToCartButton";
 
 interface ProductModalProps {
   product: Product | null;
@@ -121,17 +123,20 @@ export default function ProductModal({
                   {product.category}
                 </span>
                 
-                <button
-                  onClick={() => onToggleWishlist(product)}
-                  className={`flex items-center space-x-1 px-3 py-1.5 rounded-full text-xs font-bold shadow-sm transition-all border cursor-pointer ${
+                <AnimatedWishlistButton
+                  id={`modal-wishlist-${product.id}`}
+                  isFavorited={isFavorited}
+                  onToggle={() => onToggleWishlist(product)}
+                  showLabel={true}
+                  labelActive="Saved"
+                  labelInactive="Save"
+                  size="sm"
+                  className={`px-3 py-1.5 rounded-full text-xs font-bold shadow-sm transition-all border ${
                     isFavorited
                       ? "bg-rose-50 border-rose-100 text-rose-500"
-                      : "bg-slate-50 border-slate-100 text-slate-500 hover:text-brand-purple"
+                      : "bg-slate-50 border-slate-100 text-slate-600 hover:text-brand-purple"
                   }`}
-                >
-                  <Heart className={`h-3.5 w-3.5 ${isFavorited ? "fill-current" : ""}`} />
-                  <span>{isFavorited ? "Saved" : "Save"}</span>
-                </button>
+                />
               </div>
 
               {/* Title */}
@@ -277,13 +282,16 @@ export default function ProductModal({
               </div>
 
               {/* Submit Add to Cart */}
-              <button
-                onClick={handleAddSubmit}
-                className="flex-grow bg-brand-purple hover:bg-brand-purple-dark text-white font-bold h-11.5 rounded-xl shadow-lg shadow-brand-purple/10 flex items-center justify-center space-x-2 cursor-pointer transition-all"
-              >
-                <ShoppingCart className="h-4.5 w-4.5" />
-                <span>ADD TO CART</span>
-              </button>
+              <div className="flex-grow">
+                <AnimatedAddToCartButton
+                  id={`modal-add-${product.id}`}
+                  variant="full"
+                  label="ADD TO CART"
+                  successLabel="ADDED TO CART!"
+                  onAdd={handleAddSubmit}
+                  className="h-11"
+                />
+              </div>
             </div>
 
           </div>

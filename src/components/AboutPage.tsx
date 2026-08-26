@@ -58,66 +58,104 @@ export default function AboutPage({ onShopClick }: AboutPageProps) {
   return (
     <div className="bg-white min-h-screen font-sans">
       
-      {/* HERO SECTION: Clean introduction mimicking the homepage structure */}
-      <section className="bg-[#F3F5FC] py-16 lg:py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-200/50">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      {/* HERO SECTION: Refined Editorial Brand Hero */}
+      <section className="relative overflow-hidden bg-[#F3F5FC] py-14 sm:py-18 lg:py-24 px-4 sm:px-6 lg:px-8 border-b border-slate-200/60">
+        
+        {/* Soft solid decorative ambient accents */}
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-purple/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+        <div className="absolute top-1/3 right-10 w-80 h-80 bg-brand-purple/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           
-          {/* Left Side: Solid Human Introduction */}
+          {/* Left Column: Brand Story & Philosophy */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="lg:col-span-7 text-left space-y-6"
             id="about-hero-text"
           >
-            <span className="inline-block text-[13px] sm:text-[14px] font-bold text-brand-purple tracking-widest uppercase mb-1">
-              About Our Store
-            </span>
+            <div className="inline-flex items-center space-x-2 bg-brand-purple-light text-brand-purple px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
+              <Store className="h-3.5 w-3.5" />
+              <span>About ShopZone</span>
+            </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight md:leading-[1.1] mb-6 font-sans">
-              Our Vision for <br />
-              <span className="text-brand-purple">Modern Shopping</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight md:leading-[1.1] font-sans">
+              Thoughtfully Curated <br />
+              <span className="text-brand-purple">For Modern Living</span>
             </h1>
 
-            <div className="space-y-5 max-w-xl text-[15px] sm:text-[17px] text-slate-500 leading-relaxed font-normal">
-              <p>
-                Hi, I'm <strong className="font-bold text-slate-900">Fazla</strong>, the creator of <strong className="font-semibold text-slate-900">ShopZone</strong>.
-              </p>
-              <p>
-                ShopZone was founded on a simple principle: to curate an exceptional collection of everyday essentials that blend beautiful design with supreme durability. We believe that shopping online should be clean, straightforward, and entirely satisfying.
-              </p>
-              <p className="text-sm text-slate-400">
-                Every product, package, and experience here has been thought out with care to ensure it meets our rigorous standards of quality and service.
-              </p>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-xl">
+              ShopZone was founded by <strong className="font-bold text-slate-900">Fazla</strong> on a simple principle: modern essentials should be beautifully designed, exceptionally durable, and completely free of digital clutter.
+            </p>
+
+            {/* Core Brand Value Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 max-w-lg">
+              <div className="bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-2.5">
+                <Shield className="h-4 w-4 text-brand-purple flex-shrink-0" />
+                <span className="text-xs font-bold text-slate-800">100% Curated</span>
+              </div>
+              <div className="bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs flex items-center space-x-2.5">
+                <Sparkles className="h-4 w-4 text-brand-purple flex-shrink-0" />
+                <span className="text-xs font-bold text-slate-800">Pure Quality</span>
+              </div>
+              <div className="bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs col-span-2 sm:col-span-1 flex items-center space-x-2.5">
+                <CheckCircle className="h-4 w-4 text-brand-purple flex-shrink-0" />
+                <span className="text-xs font-bold text-slate-800">Fast Support</span>
+              </div>
+            </div>
+
+            {/* Action CTA */}
+            <div className="pt-3">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={onShopClick}
+                className="inline-flex items-center space-x-2 bg-brand-purple hover:bg-brand-purple-dark text-white font-semibold px-7 py-3.5 rounded-xl shadow-lg shadow-brand-purple/20 transition-all cursor-pointer group text-[14px]"
+              >
+                <span>EXPLORE THE COLLECTION</span>
+                <ArrowRight className="h-4.5 w-4.5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
             </div>
           </motion.div>
 
-          {/* Right Side: Solid, Clean Picture Container with Black-and-White Filter */}
+          {/* Right Column: Clean Editorial Founder Portrait Frame */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 15 }}
+            initial={{ opacity: 0, scale: 0.96, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
             className="lg:col-span-5 flex justify-center"
             id="about-hero-image"
           >
-            <div className="relative w-full max-w-[360px] aspect-[4/5] bg-white rounded-3xl border border-slate-200/80 shadow-lg overflow-hidden group">
-              <img 
-                src="https://raw.githubusercontent.com/devfazla/free-writer/refs/heads/main/assets/images/fazla.png"
-                alt="Fazla - Founder of ShopZone"
-                className="w-full h-full object-cover filter grayscale contrast-[1.05] brightness-95 hover:grayscale-0 transition-all duration-500"
-                referrerPolicy="no-referrer"
-              />
+            <div className="relative w-full max-w-[340px] sm:max-w-[370px]">
               
-              {/* Elegant, flat, solid background text caption */}
-              <div className="absolute bottom-0 inset-x-0 bg-slate-900 p-5 border-t border-white/10 flex items-center justify-between">
-                <div>
-                  <h4 className="text-white font-bold text-base">Fazla</h4>
-                  <p className="text-brand-purple-light text-xs font-semibold uppercase tracking-wider">Founder & Curator</p>
-                </div>
-                <div className="h-9 w-9 rounded-xl bg-brand-purple flex items-center justify-center">
-                  <Store className="h-5 w-5 text-white" />
+              {/* Main Portrait Card */}
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl shadow-slate-200/60 group">
+                <img 
+                  src="https://raw.githubusercontent.com/devfazla/free-writer/refs/heads/main/assets/images/fazla.png"
+                  alt="Fazla - Founder & Creator of ShopZone"
+                  className="w-full h-full object-cover filter grayscale contrast-105 brightness-95 group-hover:grayscale-0 transition-all duration-700"
+                  referrerPolicy="no-referrer"
+                />
+
+                {/* Solid minimal founder badge pinned to bottom */}
+                <div className="absolute bottom-4 inset-x-4 bg-white/95 backdrop-blur-sm rounded-2xl p-3.5 border border-slate-200/80 shadow-md flex items-center justify-between">
+                  <div>
+                    <h4 className="text-slate-900 font-bold text-sm leading-tight">Fazla</h4>
+                    <p className="text-brand-purple text-[11px] font-bold uppercase tracking-wider mt-0.5">Founder & Curator</p>
+                  </div>
+                  <div className="h-8 w-8 rounded-lg bg-brand-purple text-white flex items-center justify-center flex-shrink-0">
+                    <Store className="h-4 w-4" />
+                  </div>
                 </div>
               </div>
+
+              {/* Floating verified badge in top corner */}
+              <div className="absolute -top-3 -right-3 bg-slate-900 text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md border border-slate-800 flex items-center space-x-1.5">
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span>Verified Creator</span>
+              </div>
+
             </div>
           </motion.div>
 

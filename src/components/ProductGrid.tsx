@@ -1,8 +1,10 @@
 import React, { useState, useMemo } from "react";
-import { Star, ShoppingCart, Heart, Search, Filter, X, Check, ArrowRight } from "lucide-react";
+import { Star, Search, Filter, X, ArrowRight, Check } from "lucide-react";
 import { Product } from "../types";
 import { PRODUCTS, CATEGORIES } from "../data";
 import { motion, AnimatePresence } from "motion/react";
+import AnimatedWishlistButton from "./AnimatedWishlistButton";
+import AnimatedAddToCartButton from "./AnimatedAddToCartButton";
 
 interface ProductGridProps {
   onProductClick: (product: Product) => void;
@@ -204,17 +206,18 @@ export default function ProductGrid({
                         )}
                       </div>
                       
-                      {/* Save Button */}
-                      <button
-                        onClick={() => onToggleWishlist(prod)}
-                        className={`p-2 rounded-full shadow-md backdrop-blur-md transition-all cursor-pointer ${
+                      {/* Animated Save/Wishlist Button */}
+                      <AnimatedWishlistButton
+                        id={`wishlist-toggle-${prod.id}`}
+                        isFavorited={isFavorited}
+                        onToggle={() => onToggleWishlist(prod)}
+                        className={`p-2.5 rounded-full shadow-md backdrop-blur-md transition-all ${
                           isFavorited
                             ? "bg-rose-50 text-rose-500 hover:bg-rose-100"
-                            : "bg-white/85 text-slate-400 hover:text-brand-purple hover:bg-white"
+                            : "bg-white/90 text-slate-400 hover:text-rose-500 hover:bg-white"
                         }`}
-                      >
-                        <Heart className="h-4 w-4 fill-current" />
-                      </button>
+                        size="sm"
+                      />
                     </div>
 
                     {/* Image Section */}
@@ -275,14 +278,12 @@ export default function ProductGrid({
                           </span>
                         </div>
 
-                        {/* Quick Add To Cart */}
-                        <button
-                          onClick={() => onAddToCart(prod)}
-                          className="bg-brand-purple hover:bg-brand-purple-dark text-white p-3 rounded-xl shadow-md shadow-brand-purple/10 hover:shadow-brand-purple/20 transition-all cursor-pointer"
-                          title="Quick Add to Cart"
-                        >
-                          <ShoppingCart className="h-4.5 w-4.5" />
-                        </button>
+                        {/* Quick Add To Cart Animated Button */}
+                        <AnimatedAddToCartButton
+                          id={`quick-add-${prod.id}`}
+                          variant="icon-only"
+                          onAdd={() => onAddToCart(prod)}
+                        />
                       </div>
                     </div>
 
