@@ -38,9 +38,18 @@ export default function Footer({ setActiveCategory, scrollToProducts, onNavigate
           
           {/* Column 1: Brand Info (4 cols) */}
           <div className="lg:col-span-4">
-            <h3 className="text-2xl font-extrabold text-white tracking-tight mb-5 font-sans">
-              Shop<span className="text-brand-purple">Zone</span>
-            </h3>
+            <div className="flex items-center space-x-2.5 mb-5">
+              <img
+                src="/logo.png"
+                alt="ShopZone Logo"
+                className="h-8 w-8 object-contain"
+                width={32}
+                height={32}
+              />
+              <h3 className="text-2xl font-extrabold text-white tracking-tight font-sans">
+                Shop<span className="text-brand-purple">Zone</span>
+              </h3>
+            </div>
             <p className="text-slate-400 text-[13.5px] leading-relaxed mb-6 font-medium max-w-sm">
               Your one-stop shop for the best products at the best prices. Experience curated quality, secure payment systems, and lightning-fast logistics.
             </p>

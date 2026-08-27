@@ -98,9 +98,16 @@ export default function Header({
                   onBackToHome?.();
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
-                className="flex items-center space-x-1 py-1"
+                className="flex items-center space-x-2.5 py-1 group"
                 id="brand-logo"
               >
+                <img
+                  src="/logo.png"
+                  alt="ShopZone Logo"
+                  className="h-8 w-8 sm:h-9 sm:w-9 object-contain group-hover:scale-105 transition-transform duration-200"
+                  width={36}
+                  height={36}
+                />
                 <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 font-sans select-none">
                   Shop<span className="text-brand-purple font-black">Zone</span>
                 </span>
@@ -348,9 +355,18 @@ export default function Header({
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100 bg-slate-50/50">
-              <span className="text-xl font-extrabold tracking-tight text-slate-900">
-                Shop<span className="text-brand-purple font-black">Zone</span>
-              </span>
+              <div className="flex items-center space-x-2">
+                <img
+                  src="/logo.png"
+                  alt="ShopZone Logo"
+                  className="h-7 w-7 object-contain"
+                  width={28}
+                  height={28}
+                />
+                <span className="text-xl font-extrabold tracking-tight text-slate-900">
+                  Shop<span className="text-brand-purple font-black">Zone</span>
+                </span>
+              </div>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-1.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-all cursor-pointer border border-slate-100"
