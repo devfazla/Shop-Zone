@@ -1,9 +1,7 @@
 import React from "react";
 import { ArrowRight, ShoppingCart } from "lucide-react";
 import { motion } from "motion/react";
-
-// Resolved path of the generated image
-const heroImage = "/src/assets/images/hero-section-img.png";
+import heroImage from "../assets/images/hero-section-img.png";
 
 interface HeroProps {
   onShopNowClick: () => void;
