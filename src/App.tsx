@@ -16,7 +16,7 @@ import AccountPage from "./components/AccountPage";
 import BottomNav from "./components/BottomNav";
 import { Product, CartItem, ColorOption } from "./types";
 import { PRODUCTS } from "./data";
-import { Sparkles, Check, Heart, ShoppingCart, X, ArrowRight } from "lucide-react";
+import { Sparkles, Check, Heart, ShoppingCart, X, ArrowRight, ExternalLink } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function App() {
@@ -236,11 +236,30 @@ export default function App() {
     <div className="min-h-screen flex flex-col font-sans bg-[#FAFBFD]" id="root-container">
       
       {/* Dynamic Promotion Ribbon header */}
-      <div className="bg-brand-purple text-white text-[12px] font-bold text-center py-2 px-4 shadow-sm" id="promo-ribbon">
-        <span className="inline-flex items-center gap-1.5 justify-center">
-          <Sparkles className="h-3.5 w-3.5 animate-bounce" />
-          Grand Summer Sale: Enjoy FREE worldwide shipping on all orders over $100!
-        </span>
+      <div className="relative overflow-hidden bg-brand-purple text-white text-[12px] font-semibold text-center py-2 px-4 shadow-sm" id="promo-ribbon">
+        <a
+          href="https://devfazla.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative inline-flex items-center justify-center gap-2 group cursor-pointer transition-all duration-200 hover:opacity-95 active:scale-[0.99] focus:outline-hidden"
+          id="promo-ribbon-link"
+        >
+          {/* Live pulse dot */}
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-300" />
+          </span>
+
+          <span className="tracking-wide text-white/90 group-hover:text-white transition-colors duration-200">
+            this is a portfolio project of <strong className="font-extrabold text-white underline decoration-white/50 decoration-2 underline-offset-4 group-hover:decoration-white transition-all">devFazla</strong>
+          </span>
+
+          {/* Action badge */}
+          <span className="inline-flex items-center gap-1 bg-white/15 group-hover:bg-white/25 text-white text-[10px] uppercase font-bold tracking-widest px-2.5 py-0.5 rounded-full border border-white/20 transition-all duration-200 shadow-xs">
+            <span>Visit</span>
+            <ExternalLink className="h-2.5 w-2.5 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+          </span>
+        </a>
       </div>
 
       {/* Primary Header Navigation */}
