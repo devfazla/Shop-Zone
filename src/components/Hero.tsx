@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ onShopNowClick }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-[#F3F5FC] pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-12 md:pb-14 lg:pt-5 lg:pb-16 xl:pt-4 xl:pb-14 px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-[#F3F5FC] pt-8 pb-10 sm:pt-10 sm:pb-12 md:pt-12 md:pb-14 lg:pt-0 lg:pb-16 xl:pt-0 xl:pb-14 px-4 sm:px-6 lg:px-8">
       
       {/* Background Decorative Circles */}
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-purple/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
