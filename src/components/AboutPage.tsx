@@ -10,8 +10,13 @@ import {
   Compass,
   Heart,
   Package,
-  Clock
+  Clock,
+  Github,
+  Twitter,
+  Linkedin,
+  Globe
 } from "lucide-react";
+import ImageWithFallback from "./ImageWithFallback";
 
 import curationImg from "../assets/images/about_collection_curation_1784522126982.jpg";
 import packagingImg from "../assets/images/about_premium_packaging_1784522141123.jpg";
@@ -130,21 +135,67 @@ export default function AboutPage({ onShopClick }: AboutPageProps) {
               
               {/* Main Portrait Card */}
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl shadow-slate-200/60 group">
-                <img 
+                <ImageWithFallback 
                   src="https://raw.githubusercontent.com/devfazla/free-writer/refs/heads/main/assets/images/fazla.png"
                   alt="Fazla - Founder & Creator of ShopZone"
                   className="w-full h-full object-cover filter grayscale contrast-105 brightness-95 group-hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
+                  fallbackText="Fazla - Founder"
                 />
 
                 {/* Solid minimal founder badge pinned to bottom */}
-                <div className="absolute bottom-3 sm:bottom-4 inset-x-3 sm:inset-x-4 bg-white/95 backdrop-blur-sm rounded-2xl p-3 sm:p-3.5 border border-slate-200/80 shadow-md flex items-center justify-between">
-                  <div>
-                    <h4 className="text-slate-900 font-bold text-sm leading-tight">Fazla</h4>
-                    <p className="text-brand-purple text-[11px] font-bold uppercase tracking-wider mt-0.5">Founder & Curator</p>
+                <div className="absolute bottom-3 sm:bottom-4 inset-x-3 sm:inset-x-4 bg-white/95 backdrop-blur-sm rounded-2xl p-3 sm:p-3.5 border border-slate-200/80 shadow-md">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <h4 className="text-slate-900 font-bold text-sm leading-tight">Fazla</h4>
+                      <p className="text-brand-purple text-[11px] font-bold uppercase tracking-wider mt-0.5">Founder & Creator</p>
+                    </div>
+                    <div className="h-8 w-8 rounded-lg bg-brand-purple text-white flex items-center justify-center flex-shrink-0">
+                      <Store className="h-4 w-4" />
+                    </div>
                   </div>
-                  <div className="h-8 w-8 rounded-lg bg-brand-purple text-white flex items-center justify-center flex-shrink-0">
-                    <Store className="h-4 w-4" />
+                  {/* Founder devfazla Social Actions */}
+                  <div className="flex items-center space-x-2 pt-2 border-t border-slate-100">
+                    <a
+                      href="https://github.com/devfazla"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg bg-slate-100 hover:bg-brand-purple hover:text-white text-slate-600 transition-colors"
+                      title="GitHub: @devfazla"
+                      aria-label="Fazla GitHub"
+                    >
+                      <Github className="h-3.5 w-3.5" />
+                    </a>
+                    <a
+                      href="https://x.com/devfazla"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg bg-slate-100 hover:bg-brand-purple hover:text-white text-slate-600 transition-colors"
+                      title="X: @devfazla"
+                      aria-label="Fazla X"
+                    >
+                      <Twitter className="h-3.5 w-3.5" />
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/devfazla"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg bg-slate-100 hover:bg-brand-purple hover:text-white text-slate-600 transition-colors"
+                      title="LinkedIn: @devfazla"
+                      aria-label="Fazla LinkedIn"
+                    >
+                      <Linkedin className="h-3.5 w-3.5" />
+                    </a>
+                    <a
+                      href="https://devfazla.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg bg-slate-100 hover:bg-brand-purple hover:text-white text-slate-600 transition-colors"
+                      title="Website: devfazla.com"
+                      aria-label="Fazla Website"
+                    >
+                      <Globe className="h-3.5 w-3.5" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -219,11 +270,12 @@ export default function AboutPage({ onShopClick }: AboutPageProps) {
                       transition={{ duration: 0.3 }}
                       className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-slate-200/60 bg-slate-50"
                     >
-                      <img 
+                      <ImageWithFallback 
                         src={milestone.image} 
                         alt={milestone.title}
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
+                        fallbackText={milestone.title}
                       />
                       {/* Solid light overlay on hover */}
                       <div className="absolute inset-0 bg-slate-900/0 hover:bg-slate-900/5 transition-colors duration-300 pointer-events-none" />

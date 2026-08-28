@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Mail, Phone, MapPin, Send, MessageSquare, Check, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageSquare, Check, Sparkles, Github, Twitter, Linkedin, Instagram, Facebook, Globe } from "lucide-react";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -258,6 +258,76 @@ export default function ContactPage() {
               </div>
             </div>
           ))}
+
+          {/* Social Profiles Card */}
+          <div className="bg-white border border-slate-100 rounded-2xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-all duration-300">
+            <h3 className="text-base font-bold text-slate-900 mb-1">Official Social Channels</h3>
+            <p className="text-xs text-slate-400 font-semibold mb-4">
+              Follow and message us across our verified social profiles <span className="font-mono text-brand-purple font-bold">@devfazla</span>
+            </p>
+            <div className="flex items-center space-x-2.5 flex-wrap gap-y-2">
+              <a
+                href="https://github.com/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 w-10 rounded-xl bg-slate-50 hover:bg-brand-purple hover:text-white text-slate-600 border border-slate-100 flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                title="GitHub: @devfazla"
+                aria-label="devfazla GitHub"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+              <a
+                href="https://x.com/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 w-10 rounded-xl bg-slate-50 hover:bg-brand-purple hover:text-white text-slate-600 border border-slate-100 flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                title="X: @devfazla"
+                aria-label="devfazla X"
+              >
+                <Twitter className="h-4 w-4" />
+              </a>
+              <a
+                href="https://linkedin.com/in/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 w-10 rounded-xl bg-slate-50 hover:bg-brand-purple hover:text-white text-slate-600 border border-slate-100 flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                title="LinkedIn: @devfazla"
+                aria-label="devfazla LinkedIn"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a
+                href="https://instagram.com/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 w-10 rounded-xl bg-slate-50 hover:bg-brand-purple hover:text-white text-slate-600 border border-slate-100 flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                title="Instagram: @devfazla"
+                aria-label="devfazla Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://facebook.com/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 w-10 rounded-xl bg-slate-50 hover:bg-brand-purple hover:text-white text-slate-600 border border-slate-100 flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                title="Facebook: @devfazla"
+                aria-label="devfazla Facebook"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href="https://devfazla.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 w-10 rounded-xl bg-slate-50 hover:bg-brand-purple hover:text-white text-slate-600 border border-slate-100 flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                title="Website: devfazla.com"
+                aria-label="devfazla Website"
+              >
+                <Globe className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

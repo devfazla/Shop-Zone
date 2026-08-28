@@ -2,6 +2,7 @@ import React from "react";
 import { X, Heart, ShoppingCart, Trash2 } from "lucide-react";
 import { Product } from "../types";
 import { motion, AnimatePresence } from "motion/react";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface WishlistDrawerProps {
   isOpen: boolean;
@@ -67,11 +68,12 @@ export default function WishlistDrawer({
                     >
                       {/* Product Thumbnail */}
                       <div className="h-20 w-20 bg-slate-50 border border-slate-100 rounded-xl overflow-hidden flex-shrink-0">
-                        <img
+                        <ImageWithFallback
                           src={prod.image}
                           alt={prod.name}
                           className="h-full w-full object-cover"
                           referrerPolicy="no-referrer"
+                          fallbackText={prod.name}
                         />
                       </div>
 

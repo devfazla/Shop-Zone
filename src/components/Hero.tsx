@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight, ShoppingCart } from "lucide-react";
 import { motion } from "motion/react";
 import heroImage from "../assets/images/hero-section-img.png";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface HeroProps {
   onShopNowClick: () => void;
@@ -53,11 +54,12 @@ export default function Hero({ onShopNowClick }: HeroProps) {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="lg:col-span-8 flex justify-center"
         >
-          <img
+          <ImageWithFallback
             src={heroImage}
             alt="ShopZone Hero Showroom Collection"
             className="w-full max-w-[750px] md:max-w-[870px] h-auto object-contain"
             referrerPolicy="no-referrer"
+            fallbackText="ShopZone Showroom Collection"
           />
         </motion.div>
 

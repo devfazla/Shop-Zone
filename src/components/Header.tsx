@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Search, Heart, ShoppingBag, Menu, X, ChevronDown, Home, Layers, BookOpen, Mail, Store, ArrowRight, MapPin, Phone, User, HelpCircle } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { CATEGORIES } from "../data";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface HeaderProps {
   cartCount: number;
@@ -101,12 +102,13 @@ export default function Header({
                 className="flex items-center space-x-2.5 py-1 group"
                 id="brand-logo"
               >
-                <img
+                <ImageWithFallback
                   src="/logo.png"
                   alt="ShopZone Logo"
                   className="h-8 w-8 sm:h-9 sm:w-9 object-contain group-hover:scale-105 transition-transform duration-200"
                   width={36}
                   height={36}
+                  fallbackSrc="/logo.svg"
                 />
                 <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 font-sans select-none">
                   Shop<span className="text-brand-purple font-black">Zone</span>
@@ -356,12 +358,13 @@ export default function Header({
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100 bg-slate-50/50">
               <div className="flex items-center space-x-2">
-                <img
+                <ImageWithFallback
                   src="/logo.png"
                   alt="ShopZone Logo"
                   className="h-7 w-7 object-contain"
                   width={28}
                   height={28}
+                  fallbackSrc="/logo.svg"
                 />
                 <span className="text-xl font-extrabold tracking-tight text-slate-900">
                   Shop<span className="text-brand-purple font-black">Zone</span>

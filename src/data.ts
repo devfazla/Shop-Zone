@@ -5,37 +5,37 @@ export const CATEGORIES: Category[] = [
     id: "electronics",
     name: "Electronics",
     count: 12,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/categories/Electronics/Electronics.jpg",
   },
   {
     id: "fashion",
     name: "Fashion",
     count: 18,
-    image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/categories/Fashion/Fashion.jpg",
   },
   {
     id: "beauty",
     name: "Beauty",
     count: 15,
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/categories/Beauty/Beauty.jpg",
   },
   {
     id: "furniture",
     name: "Furniture",
     count: 10,
-    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/categories/Furniture/Furniture.jpg",
   },
   {
     id: "accessories",
     name: "Accessories",
     count: 20,
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/categories/Accessories/Accessories.jpg",
   },
   {
     id: "gaming",
     name: "Gaming",
     count: 14,
-    image: "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/categories/Gaming/Gaming.jpg",
   },
 ];
 
@@ -47,11 +47,11 @@ export const PRODUCTS: Product[] = [
     price: 299,
     originalPrice: 349,
     category: "electronics",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/electronics/Zone_Pro_Wireless_ANC_Headphones/Zone_Pro_Wireless_ANC_Headphones_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/electronics/Zone_Pro_Wireless_ANC_Headphones/Zone_Pro_Wireless_ANC_Headphones_1.jpg",
+      "/assets/images/products/electronics/Zone_Pro_Wireless_ANC_Headphones/Zone_Pro_Wireless_ANC_Headphones_2.jpg",
+      "/assets/images/products/electronics/Zone_Pro_Wireless_ANC_Headphones/Zone_Pro_Wireless_ANC_Headphones_3.jpg"
     ],
     rating: 4.8,
     reviewCount: 124,
@@ -77,10 +77,10 @@ export const PRODUCTS: Product[] = [
     name: "AuraCast Premium Bluetooth Speaker",
     price: 189,
     category: "electronics",
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/electronics/AuraCast_Premium_Bluetooth_Speaker/AuraCast_Premium_Bluetooth_Speaker_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/electronics/AuraCast_Premium_Bluetooth_Speaker/AuraCast_Premium_Bluetooth_Speaker_1.jpg",
+      "/assets/images/products/electronics/AuraCast_Premium_Bluetooth_Speaker/AuraCast_Premium_Bluetooth_Speaker_2.jpg"
     ],
     rating: 4.6,
     reviewCount: 78,
@@ -104,9 +104,9 @@ export const PRODUCTS: Product[] = [
     price: 129,
     originalPrice: 159,
     category: "electronics",
-    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/electronics/NanoBuds_Pro_Wireless_Earbuds/NanoBuds_Pro_Wireless_Earbuds_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/electronics/NanoBuds_Pro_Wireless_Earbuds/NanoBuds_Pro_Wireless_Earbuds_1.jpg"
     ],
     rating: 4.5,
     reviewCount: 92,
@@ -130,10 +130,10 @@ export const PRODUCTS: Product[] = [
     name: "Minimalist Heavyweight Cotton Tee",
     price: 35,
     category: "fashion",
-    image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/fashion/Minimalist_Heavyweight_Cotton_Tee/Minimalist_Heavyweight_Cotton_Tee_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/fashion/Minimalist_Heavyweight_Cotton_Tee/Minimalist_Heavyweight_Cotton_Tee_1.jpg",
+      "/assets/images/products/fashion/Minimalist_Heavyweight_Cotton_Tee/Minimalist_Heavyweight_Cotton_Tee_2.jpg"
     ],
     rating: 4.7,
     reviewCount: 310,
@@ -159,9 +159,9 @@ export const PRODUCTS: Product[] = [
     price: 75,
     originalPrice: 95,
     category: "fashion",
-    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/fashion/Urban_Essential_French_Terry_Hoodie/Urban_Essential_French_Terry_Hoodie_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/fashion/Urban_Essential_French_Terry_Hoodie/Urban_Essential_French_Terry_Hoodie_1.jpg"
     ],
     rating: 4.9,
     reviewCount: 145,
@@ -186,9 +186,9 @@ export const PRODUCTS: Product[] = [
     name: "Heritage Distressed Denim Jacket",
     price: 110,
     category: "fashion",
-    image: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/fashion/Heritage_Distressed_Denim_Jacket/Heritage_Distressed_Denim_Jacket_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/fashion/Heritage_Distressed_Denim_Jacket/Heritage_Distressed_Denim_Jacket_1.jpg"
     ],
     rating: 4.4,
     reviewCount: 64,
@@ -214,10 +214,10 @@ export const PRODUCTS: Product[] = [
     price: 89,
     originalPrice: 110,
     category: "beauty",
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/beauty/Pure_Bloom_Hydra-Serum_Set/Pure_Bloom_Hydra-Serum_Set_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/beauty/Pure_Bloom_Hydra-Serum_Set/Pure_Bloom_Hydra-Serum_Set_1.jpg",
+      "/assets/images/products/beauty/Pure_Bloom_Hydra-Serum_Set/Pure_Bloom_Hydra-Serum_Set_2.jpg"
     ],
     rating: 4.8,
     reviewCount: 156,
@@ -236,9 +236,9 @@ export const PRODUCTS: Product[] = [
     name: "Noir Oud Exquisite Eau de Parfum",
     price: 145,
     category: "beauty",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/beauty/Noir_Oud_Exquisite_Eau_de_Parfum/Noir_Oud_Exquisite_Eau_de_Parfum_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/beauty/Noir_Oud_Exquisite_Eau_de_Parfum/Noir_Oud_Exquisite_Eau_de_Parfum_1.jpg"
     ],
     rating: 4.9,
     reviewCount: 204,
@@ -260,10 +260,10 @@ export const PRODUCTS: Product[] = [
     price: 340,
     originalPrice: 399,
     category: "furniture",
-    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/furniture/Nordic_Minimalist_Oak_Armchair/Nordic_Minimalist_Oak_Armchair_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/furniture/Nordic_Minimalist_Oak_Armchair/Nordic_Minimalist_Oak_Armchair_1.jpg",
+      "/assets/images/products/furniture/Nordic_Minimalist_Oak_Armchair/Nordic_Minimalist_Oak_Armchair_2.jpg"
     ],
     rating: 4.7,
     reviewCount: 52,
@@ -287,9 +287,9 @@ export const PRODUCTS: Product[] = [
     name: "Sleek Industrial Wire Coffee Table",
     price: 199,
     category: "furniture",
-    image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/furniture/Sleek_Industrial_Wire_Coffee_Table/Sleek_Industrial_Wire_Coffee_Table_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/furniture/Sleek_Industrial_Wire_Coffee_Table/Sleek_Industrial_Wire_Coffee_Table_1.jpg"
     ],
     rating: 4.3,
     reviewCount: 37,
@@ -314,10 +314,10 @@ export const PRODUCTS: Product[] = [
     price: 249,
     originalPrice: 299,
     category: "accessories",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/accessories/ShopZone_Smartwatch_Pro_V2/ShopZone_Smartwatch_Pro_V2_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/accessories/ShopZone_Smartwatch_Pro_V2/ShopZone_Smartwatch_Pro_V2_1.jpg",
+      "/assets/images/products/accessories/ShopZone_Smartwatch_Pro_V2/ShopZone_Smartwatch_Pro_V2_2.jpg"
     ],
     rating: 4.8,
     reviewCount: 184,
@@ -343,9 +343,9 @@ export const PRODUCTS: Product[] = [
     price: 85,
     originalPrice: 120,
     category: "accessories",
-    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/accessories/Classic_Acetate_Polarized_Sunglasses/Classic_Acetate_Polarized_Sunglasses_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/accessories/Classic_Acetate_Polarized_Sunglasses/Classic_Acetate_Polarized_Sunglasses_1.jpg"
     ],
     rating: 4.6,
     reviewCount: 95,
@@ -367,10 +367,10 @@ export const PRODUCTS: Product[] = [
     name: "Full-Grain Italian Leather Wallet",
     price: 55,
     category: "accessories",
-    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/accessories/Full-Grain_Italian_Leather_Wallet/Full-Grain_Italian_Leather_Wallet_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/accessories/Full-Grain_Italian_Leather_Wallet/Full-Grain_Italian_Leather_Wallet_1.jpg",
+      "/assets/images/products/accessories/Full-Grain_Italian_Leather_Wallet/Full-Grain_Italian_Leather_Wallet_2.jpg"
     ],
     rating: 4.7,
     reviewCount: 112,
@@ -395,10 +395,10 @@ export const PRODUCTS: Product[] = [
     price: 79,
     originalPrice: 89,
     category: "gaming",
-    image: "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/gaming/Zone_Strike_Purple_Wireless_Controller/Zone_Strike_Purple_Wireless_Controller_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/gaming/Zone_Strike_Purple_Wireless_Controller/Zone_Strike_Purple_Wireless_Controller_1.jpg",
+      "/assets/images/products/gaming/Zone_Strike_Purple_Wireless_Controller/Zone_Strike_Purple_Wireless_Controller_2.jpg"
     ],
     rating: 4.8,
     reviewCount: 234,
@@ -424,9 +424,9 @@ export const PRODUCTS: Product[] = [
     name: "Apex Elite Mechanical Keyboard",
     price: 159,
     category: "gaming",
-    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/images/products/gaming/Apex_Elite_Mechanical_Keyboard/Apex_Elite_Mechanical_Keyboard_1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=600&auto=format&fit=crop"
+      "/assets/images/products/gaming/Apex_Elite_Mechanical_Keyboard/Apex_Elite_Mechanical_Keyboard_1.jpg"
     ],
     rating: 4.7,
     reviewCount: 89,
@@ -453,7 +453,7 @@ export const MOCK_REVIEWS: Review[] = [
     rating: 5,
     date: "July 12, 2026",
     comment: "Absolutely outstanding quality. This is exactly what I was searching for! The attention to detail, premium packaging, and fast shipping exceeded my expectations. 10/10 will purchase again.",
-    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&q=80"
+    avatar: "/assets/images/reviews/avatars/Alex_Johnson.jpg"
   },
   {
     id: "rev-2",
@@ -461,7 +461,7 @@ export const MOCK_REVIEWS: Review[] = [
     rating: 5,
     date: "June 28, 2026",
     comment: "The visual appearance is gorgeous and performance matches premium brands. It fits perfectly into my minimalist setup. Highly recommend to anyone considering it!",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80"
+    avatar: "/assets/images/reviews/avatars/Sophia_Miller.jpg"
   },
   {
     id: "rev-3",
@@ -469,6 +469,6 @@ export const MOCK_REVIEWS: Review[] = [
     rating: 4,
     date: "May 15, 2026",
     comment: "Very solid build quality and beautiful ergonomics. The customer service team was incredibly responsive and resolved my size exchange in under 24 hours. Great brand!",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80"
+    avatar: "/assets/images/reviews/avatars/Marcus_Chen.jpg"
   }
 ];

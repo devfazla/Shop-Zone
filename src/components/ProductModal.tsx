@@ -5,6 +5,7 @@ import { MOCK_REVIEWS } from "../data";
 import { motion, AnimatePresence } from "motion/react";
 import AnimatedWishlistButton from "./AnimatedWishlistButton";
 import AnimatedAddToCartButton from "./AnimatedAddToCartButton";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface ProductModalProps {
   product: Product | null;
@@ -83,11 +84,12 @@ export default function ProductModal({
           {/* Left Column: Image Gallery */}
           <div className="md:w-1/2 p-6 sm:p-8 bg-slate-50/50 flex flex-col justify-between">
             <div className="relative aspect-square bg-slate-50 rounded-2xl overflow-hidden flex items-center justify-center p-4 border border-slate-100">
-              <img
+              <ImageWithFallback
                 src={activeImage || product.image}
                 alt={product.name}
                 className="w-full h-full object-cover rounded-xl"
                 referrerPolicy="no-referrer"
+                fallbackText={product.name}
               />
             </div>
 
@@ -102,11 +104,12 @@ export default function ProductModal({
                       (activeImage || product.image) === imgUrl ? "border-brand-purple scale-95 shadow-md" : "border-slate-100 opacity-70 hover:opacity-100"
                     }`}
                   >
-                    <img
+                    <ImageWithFallback
                       src={imgUrl}
                       alt={`${product.name} thumbnail ${idx}`}
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
+                      fallbackText={`Thumb ${idx + 1}`}
                     />
                   </button>
                 ))}

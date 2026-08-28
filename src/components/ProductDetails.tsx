@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ArrowLeft, Check, Minus, Plus, Star, ShieldCheck, Truck, RotateCcw, ArrowRight, Share2 } from "lucide-react";
 import { motion } from "motion/react";
 import { Product, ColorOption } from "../types";
-import { PRODUCTS } from "../data";
+import { PRODUCTS, MOCK_REVIEWS } from "../data";
 import AnimatedWishlistButton from "./AnimatedWishlistButton";
 import AnimatedAddToCartButton from "./AnimatedAddToCartButton";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface ProductDetailsProps {
   product: Product;
@@ -105,11 +106,12 @@ export default function ProductDetails({
           {/* Left Block: Gallery */}
           <div className="lg:col-span-6 flex flex-col justify-start">
             <div className="relative aspect-square bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden flex items-center justify-center">
-              <img
+              <ImageWithFallback
                 src={activeImage}
                 alt={product.name}
                 className="w-full h-full object-cover transition-transform duration-500"
                 referrerPolicy="no-referrer"
+                fallbackText={product.name}
               />
               {product.isNew && (
                 <span className="absolute top-4 left-4 bg-emerald-500 text-white text-[11px] font-black tracking-widest uppercase px-3 py-1.5 rounded-full shadow-md shadow-emerald-500/10 z-10">
@@ -136,11 +138,12 @@ export default function ProductDetails({
                         : "border-slate-100 opacity-70 hover:opacity-100"
                     }`}
                   >
-                    <img
+                    <ImageWithFallback
                       src={img}
                       alt={`${product.name} gallery image ${idx + 1}`}
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
+                      fallbackText={`Thumb ${idx + 1}`}
                     />
                   </button>
                 ))}
@@ -401,6 +404,80 @@ export default function ProductDetails({
         </div>
       </div>
 
+      {/* Verified Customer Reviews Section */}
+      <div className="bg-white border border-slate-100 rounded-3xl p-6 sm:p-10 mb-12 shadow-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-100">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+              Customer Reviews
+            </h2>
+            <div className="flex items-center space-x-2 mt-1">
+              <div className="flex items-center space-x-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 text-amber-400 fill-amber-400" />
+                ))}
+              </div>
+              <span className="text-sm font-bold text-slate-800">
+                {product.rating.toFixed(1)} out of 5
+              </span>
+              <span className="text-xs text-slate-400">
+                ({product.reviewCount} reviews)
+              </span>
+            </div>
+          </div>
+          <div className="flex items-center space-x-2">
+            <span className="inline-flex items-center text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-3 py-1.5 rounded-xl">
+              <Check className="h-3.5 w-3.5 mr-1" />
+              100% Verified Purchases
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {MOCK_REVIEWS.map((rev) => (
+            <div
+              key={rev.id}
+              className="bg-slate-50/70 border border-slate-100 rounded-2xl p-5 flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center space-x-3 mb-3.5">
+                  <div className="h-10 w-10 rounded-full overflow-hidden border border-slate-200 bg-white flex-shrink-0">
+                    <ImageWithFallback
+                      src={rev.avatar}
+                      alt={rev.userName}
+                      className="h-full w-full object-cover"
+                      fallbackText={rev.userName}
+                    />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-sm font-bold text-slate-900 truncate">
+                      {rev.userName}
+                    </h4>
+                    <p className="text-[11px] text-slate-400 font-medium">
+                      {rev.date}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-1 mb-2.5">
+                  {[...Array(rev.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-3.5 w-3.5 text-amber-400 fill-amber-400"
+                    />
+                  ))}
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                  "{rev.comment}"
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-200/50 flex items-center text-[11px] font-semibold text-emerald-600">
+                <Check className="h-3 w-3 mr-1" /> Verified Buyer
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Related Products Recommendations */}
       {relatedProducts.length > 0 && (
         <div id="related-products-section">
@@ -425,11 +502,12 @@ export default function ProductDetails({
                   className="bg-white border border-slate-100 rounded-3xl overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer flex flex-col justify-between"
                 >
                   <div className="bg-slate-50 aspect-square relative flex items-center justify-center overflow-hidden">
-                    <img
+                    <ImageWithFallback
                       src={p.image}
                       alt={p.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       referrerPolicy="no-referrer"
+                      fallbackText={p.name}
                     />
                   </div>
                   <div className="p-6">

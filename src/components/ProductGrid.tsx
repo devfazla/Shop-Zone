@@ -5,6 +5,7 @@ import { PRODUCTS, CATEGORIES } from "../data";
 import { motion, AnimatePresence } from "motion/react";
 import AnimatedWishlistButton from "./AnimatedWishlistButton";
 import AnimatedAddToCartButton from "./AnimatedAddToCartButton";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface ProductGridProps {
   onProductClick: (product: Product) => void;
@@ -225,11 +226,12 @@ export default function ProductGrid({
                       onClick={() => onProductClick(prod)}
                       className="aspect-square bg-slate-50 flex items-center justify-center overflow-hidden cursor-pointer relative"
                     >
-                      <img
+                      <ImageWithFallback
                         src={prod.image}
                         alt={prod.name}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         referrerPolicy="no-referrer"
+                        fallbackText={prod.name}
                       />
                       {/* Quick view overlay */}
                       <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -423,11 +425,12 @@ export default function ProductGrid({
                     >
                       <div className="flex items-center space-x-3.5">
                         <div className="h-11 w-11 rounded-xl overflow-hidden bg-white border border-slate-100 relative flex items-center justify-center">
-                          <img
+                          <ImageWithFallback
                             src={cat.image}
                             alt={cat.name}
                             className="h-full w-full object-cover"
                             referrerPolicy="no-referrer"
+                            fallbackText={cat.name}
                           />
                         </div>
                         <div>

@@ -18,6 +18,7 @@ import { Product, CartItem, ColorOption } from "./types";
 import { PRODUCTS } from "./data";
 import { Sparkles, Check, Heart, ShoppingCart, X, ArrowRight, ExternalLink } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import ImageWithFallback from "./components/ImageWithFallback";
 
 export default function App() {
   // Application Global States
@@ -459,11 +460,12 @@ export default function App() {
                 {/* Product Thumbnail or Animated Icon */}
                 {toast.productImage ? (
                   <div className="h-11 w-11 rounded-xl bg-white p-0.5 overflow-hidden flex-shrink-0 shadow-xs border border-slate-700">
-                    <img
+                    <ImageWithFallback
                       src={toast.productImage}
                       alt="Item preview"
                       className="h-full w-full object-cover rounded-lg"
                       referrerPolicy="no-referrer"
+                      fallbackText="Product"
                     />
                   </div>
                 ) : (

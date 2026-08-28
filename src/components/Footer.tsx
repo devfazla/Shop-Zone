@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Facebook, Twitter, Instagram, Send, ArrowUp, Mail } from "lucide-react";
+import { Facebook, Twitter, Instagram, Github, Linkedin, Send, ArrowUp, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface FooterProps {
   setActiveCategory: (catId: string) => void;
@@ -39,12 +40,13 @@ export default function Footer({ setActiveCategory, scrollToProducts, onNavigate
           {/* Column 1: Brand Info (4 cols) */}
           <div className="lg:col-span-4">
             <div className="flex items-center space-x-2.5 mb-5">
-              <img
+              <ImageWithFallback
                 src="/logo.png"
                 alt="ShopZone Logo"
                 className="h-8 w-8 object-contain"
                 width={32}
                 height={32}
+                fallbackSrc="/logo.svg"
               />
               <h3 className="text-2xl font-extrabold text-white tracking-tight font-sans">
                 Shop<span className="text-brand-purple">Zone</span>
@@ -54,27 +56,56 @@ export default function Footer({ setActiveCategory, scrollToProducts, onNavigate
               Your one-stop shop for the best products at the best prices. Experience curated quality, secure payment systems, and lightning-fast logistics.
             </p>
             {/* Social Icons */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2.5 flex-wrap gap-y-2">
               <a
-                href="#"
+                href="https://facebook.com/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="h-9 w-9 rounded-full border border-slate-800 hover:border-brand-purple hover:bg-brand-purple text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Facebook Link"
+                aria-label="devfazla Facebook Profile"
+                title="Facebook: @devfazla"
               >
                 <Facebook className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://x.com/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="h-9 w-9 rounded-full border border-slate-800 hover:border-brand-purple hover:bg-brand-purple text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Twitter Link"
+                aria-label="devfazla X (Twitter) Profile"
+                title="X: @devfazla"
               >
                 <Twitter className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://instagram.com/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="h-9 w-9 rounded-full border border-slate-800 hover:border-brand-purple hover:bg-brand-purple text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Instagram Link"
+                aria-label="devfazla Instagram Profile"
+                title="Instagram: @devfazla"
               >
                 <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://github.com/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-9 w-9 rounded-full border border-slate-800 hover:border-brand-purple hover:bg-brand-purple text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer"
+                aria-label="devfazla GitHub Profile"
+                title="GitHub: @devfazla"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+              <a
+                href="https://linkedin.com/in/devfazla"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-9 w-9 rounded-full border border-slate-800 hover:border-brand-purple hover:bg-brand-purple text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer"
+                aria-label="devfazla LinkedIn Profile"
+                title="LinkedIn: @devfazla"
+              >
+                <Linkedin className="h-4 w-4" />
               </a>
             </div>
           </div>

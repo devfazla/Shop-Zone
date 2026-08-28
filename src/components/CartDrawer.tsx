@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { X, Minus, Plus, Trash2, ShoppingBag, CreditCard, Check, ArrowLeft, ArrowRight, ShieldCheck } from "lucide-react";
 import { CartItem } from "../types";
 import { motion, AnimatePresence } from "motion/react";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -156,11 +157,12 @@ export default function CartDrawer({
                           >
                             {/* Product Thumb */}
                             <div className="h-20 w-20 bg-slate-50 border border-slate-100 rounded-xl overflow-hidden flex-shrink-0">
-                              <img
+                              <ImageWithFallback
                                 src={item.product.image}
                                 alt={item.product.name}
                                 className="h-full w-full object-cover"
                                 referrerPolicy="no-referrer"
+                                fallbackText={item.product.name}
                               />
                             </div>
 

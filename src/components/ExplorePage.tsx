@@ -20,6 +20,7 @@ import {
 import { Product } from "../types";
 import { PRODUCTS, CATEGORIES } from "../data";
 import { motion, AnimatePresence } from "motion/react";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface ExplorePageProps {
   onProductClick: (product: Product) => void;
@@ -620,11 +621,12 @@ export default function ExplorePage({
                             onClick={() => onProductClick(prod)}
                             className="aspect-square bg-slate-50 flex items-center justify-center cursor-pointer overflow-hidden relative"
                           >
-                            <img
+                            <ImageWithFallback
                               src={prod.image}
                               alt={prod.name}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                               referrerPolicy="no-referrer"
+                              fallbackText={prod.name}
                             />
                             {prod.stock <= 5 && (
                               <div className="absolute bottom-2 inset-x-2 bg-amber-500/95 text-white text-[10px] font-black tracking-widest uppercase py-1 text-center rounded-lg z-10">
@@ -703,11 +705,12 @@ export default function ExplorePage({
                             onClick={() => onProductClick(prod)}
                             className="h-48 w-full sm:w-48 bg-slate-50 rounded-xl overflow-hidden cursor-pointer flex-shrink-0 relative"
                           >
-                            <img
+                            <ImageWithFallback
                               src={prod.image}
                               alt={prod.name}
                               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                               referrerPolicy="no-referrer"
+                              fallbackText={prod.name}
                             />
                             {prod.isNew && (
                               <span className="absolute top-2.5 left-2.5 bg-brand-purple text-white text-[9px] font-extrabold uppercase px-2 py-0.5 rounded z-10">

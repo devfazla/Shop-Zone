@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { CATEGORIES } from "../data";
 import { motion } from "motion/react";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface CategoriesProps {
   onCategorySelect: (categoryId: string) => void;
@@ -48,11 +49,12 @@ export default function Categories({ onCategorySelect, scrollToProducts }: Categ
             >
               {/* Circular cropped image of item */}
               <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden bg-white mb-5 shadow-inner border border-slate-100 flex items-center justify-center p-1.5 group">
-                <img
+                <ImageWithFallback
                   src={cat.image}
                   alt={cat.name}
                   className="w-full h-full rounded-full object-cover transition-transform duration-500 group-hover:scale-110"
                   referrerPolicy="no-referrer"
+                  fallbackText={cat.name}
                 />
               </div>
 

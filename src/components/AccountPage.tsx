@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { User, ShoppingBag, MapPin, Settings, Check, CreditCard, ChevronRight, Package, Truck, Calendar, Lock } from "lucide-react";
 import { PRODUCTS } from "../data";
+import ImageWithFallback from "./ImageWithFallback";
 
 export default function AccountPage() {
   const [activeTab, setActiveTab] = useState<"profile" | "orders" | "addresses" | "security">("profile");
@@ -281,11 +282,12 @@ export default function AccountPage() {
                         {order.items.map((item, idx) => (
                           <div key={idx} className="flex items-center space-x-4 pt-4 first:pt-0">
                             <div className="h-16 w-16 bg-slate-50 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center border border-slate-100">
-                              <img
+                              <ImageWithFallback
                                 src={item.image}
                                 alt={item.name}
                                 className="h-full w-full object-cover"
                                 referrerPolicy="no-referrer"
+                                fallbackText={item.name}
                               />
                             </div>
                             <div className="flex-grow min-w-0">
